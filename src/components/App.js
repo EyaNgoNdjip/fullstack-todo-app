@@ -1,9 +1,12 @@
 import React from "react";
+import LoginPage from "../pages/LoginPage";
+import WelcomePage from "../pages/WelcomePage";
 
 const App = () => {
   return (
     <div>
-      <h1>App Component</h1>
+      <LoginPage />
+      <WelcomePage />
     </div>
   );
 };
