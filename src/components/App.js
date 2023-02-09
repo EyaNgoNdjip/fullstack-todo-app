@@ -6,6 +6,7 @@ import LoginPage from "../pages/LoginPage";
 import WelcomePage from "../pages/WelcomePage";
 import HeaderPage from "../pages/HeaderPage";
 import FooterPage from "../pages/FooterPage";
+import LogoutPage from "../pages/LogoutPage";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/welcome/:username" element={<WelcomePage />} />
           <Route path="/todos" element={<ListTodosPage />} />
+          <Route path="/logout" element={<LogoutPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
