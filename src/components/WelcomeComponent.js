@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const WelcomeComponent = () => {
   const { username } = useParams();
@@ -7,6 +7,7 @@ const WelcomeComponent = () => {
   return (
     <div>
       <h1 className="welcome"> Welcome {username}</h1>
+      Manage your todos - <Link to="/todos">Todos</Link>
     </div>
   );
 };

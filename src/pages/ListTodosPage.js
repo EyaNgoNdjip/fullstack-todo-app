@@ -1,12 +1,12 @@
 import React from "react";
-import ErrorComponent from "../components/ErrorComponent";
+import ListTodosComponent from "../components/ListTodosComponent";
 
-const ErrorPage = () => {
+const ListTodosPage = () => {
   return (
     <div>
-      <ErrorComponent />
+      <ListTodosComponent />
     </div>
   );
 };
 
-export default ErrorPage;
+export default ListTodosPage;
