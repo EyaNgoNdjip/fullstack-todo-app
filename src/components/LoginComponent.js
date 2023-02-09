@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const LoginComponent = () => {
-  const [username, setUsername] = useState("Eya");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showSuccess, setShowSucces] = useState(false);
   const [showError, setShowError] = useState(false);
@@ -20,10 +20,10 @@ const LoginComponent = () => {
   };
 
   const handleClick = () => {
-    if (username === "Eya" && password === "dummy") {
+    if (username && password === "dummy") {
       setShowSucces(true);
       setShowError(false);
-      navigate("/");
+      navigate(`/welcome/${username}`);
     } else {
       setShowError(true);
       setShowSucces(false);
