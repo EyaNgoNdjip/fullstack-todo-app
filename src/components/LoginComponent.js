@@ -1,30 +1,47 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginComponent = () => {
   const [username, setUsername] = useState("Eya");
   const [password, setPassword] = useState("");
+  const [showSuccess, setShowSucces] = useState(false);
+  const [showError, setShowError] = useState(false);
 
-  function handleUsernameChange(event) {
+  const navigate = useNavigate();
+
+  const handleUsernameChange = (event) => {
     event.preventDefault();
     setUsername(event.target.value);
-  }
+  };
 
-  function handlePasswordChange(event) {
+  const handlePasswordChange = (event) => {
     event.preventDefault();
     setPassword(event.target.value);
-  }
+  };
 
   const handleClick = () => {
-    console.log(username);
-    console.log(password);
+    if (username === "Eya" && password === "dummy") {
+      setShowSucces(true);
+      setShowError(false);
+      navigate("/");
+    } else {
+      setShowError(true);
+      setShowSucces(false);
+    }
   };
 
   return (
     <div className="login">
-      <div className="success-msg">Authenticated Successfully</div>
-      <div className="error-msg">
-        Authenticated Failed, please check your credential
-      </div>
+      {showSuccess && (
+        <div className="success-msg"> Authentication successfully !</div>
+      )}
+
+      {showError && (
+        <div className="error-msg">
+          Authentication failed, please check your credentials !
+        </div>
+      )}
+
       <div className="login-form">
         <div className="username-block">
           <label>User Name</label>
